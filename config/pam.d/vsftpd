@@ -1,0 +1,3 @@
+# Customized login using htpasswd file
+auth    required pam_pwdfile.so pwdfile /var/www/config/passwd
+account required pam_permit.so
