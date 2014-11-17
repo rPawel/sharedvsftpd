@@ -25,8 +25,6 @@ RUN sh -c "echo pasv_address=85.13.197.74 >> /etc/vsftpd.conf"
 RUN sh -c "echo pasv_min_port=49210 >> /etc/vsftpd.conf"
 RUN sh -c "echo pasv_max_port=49210 >> /etc/vsftpd.conf"
 
-# USER
-#RUN useradd -d /var/www/app --no-create-home --shell /bin/bash -g www-data -G adm user
 # Supervisord
 RUN mkdir -p /var/log/supervisor; mkdir /etc/vsftpd; ln -s /var/www/config/passwd /etc/vsftpd/passwd; usermod -u 1000 ftp; usermod -g www-data ftp
 
