@@ -21,7 +21,7 @@ ADD config/pam.d/vsftpd /etc/pam.d/vsftpd
 ADD config/supervisord.conf /etc/supervisord.conf
 RUN mkdir -p /var/run/vsftpd/empty && chown root:root /etc/vsftpd.conf
 
-RUN sh -c "echo pasv_address=85.13.197.74 >> /etc/vsftpd.conf"
+RUN sh -c "echo pasv_address=EXTERNAL.SERVER.IP.ADDRESS >> /etc/vsftpd.conf"
 RUN sh -c "echo pasv_min_port=49210 >> /etc/vsftpd.conf"
 RUN sh -c "echo pasv_max_port=49210 >> /etc/vsftpd.conf"
 
